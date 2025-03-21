@@ -1,3 +1,17 @@
+/*======Loading js code ==*/
+window.onload = function(){
+    const loadingWrapper = document.querySelector('.loading-wrapper');
+
+    if(loadingWrapper){
+        loadingWrapper.style.transition = "opacity 0.5s ease-out";
+        loadingWrapper.style.opacity = "0";
+        setTimeout(function(){
+            loadingWrapper.style.display = "none"
+        }, 500)
+    }
+}
+
+/*================Mouse cool effect even if its nor working properly =====*/
 document.addEventListener('mousemove', (e) => {
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
@@ -9,7 +23,7 @@ document.addEventListener('mousemove', (e) => {
         cursor.remove();
     }, 100);
 });
-
+/*==================imgage and info transition =======*/
 const animates = document.querySelectorAll('.first');
 window.addEventListener('scroll', function(){
     const scrollTrigger = this.window.innerHeight;
@@ -46,7 +60,7 @@ window.addEventListener('scroll', function(){
         }
     })
 })
-
+/*======================Add contact code ========*/
 var addcontact = document.querySelectorAll('.addcontact');
 addcontact.forEach((contact) => {
     contact.addEventListener('click', function(){
@@ -63,19 +77,7 @@ addcontact.forEach((contact) => {
         }
     })
 })
-//  addcontact.forEach((contact) => {
-//      contact.addEventListener('click', function(){
-//          if(contacts.value.length < 10){
-//             alert('You must enter a valid number boss')
-//          }
-//          else{
-//             contactDisplay.innerHTML = contacts.value;
-//          }
-//          contacts.remove();
-//          addcontact.remove();
-//      })
-// })
-
+/*=============================Carousel animation the slider animation if you prefer=)*/
 var nextBtn = document.querySelector('.next'),
     prevBtn = document.querySelector('.prev'),
     carousel = document.querySelector('.carousel'),
