@@ -115,3 +115,22 @@ function showslider(type){
         nextBtn.click()
     }, timeAutonext)
 }
+
+function filterStudents() {
+    const input = document.getElementById('search-bar').value.toLowerCase();
+    const students = document.querySelectorAll('#student .side');
+
+    students.forEach(student => {
+        const name = student.querySelector('span').textContent.toLowerCase();
+        if (name.includes(input)) {
+            student.style.display = '';
+        } else {
+            student.style.display = 'none';
+        }
+    });
+}
+
+const searchBtn = document.getElementById('search-button')
+searchBtn.addEventListener('click', function(){
+    filterStudents()
+})

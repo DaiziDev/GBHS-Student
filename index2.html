@@ -3,129 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="ind.css">
+    <title>GBHS-Classmate</title>
 </head>
 <body>
-    
-
     <style>
-        .loading-wrapper{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-.loading-wrapper .loader{
-    display: flex;
-}
-.loading-wrapper .loader .dot{
-    width: 15px;
-    height: 15px;
-    margin: 0 5px;
-    border-radius: 50%;
-    background-color: skyblue;
-    animation: bounce 1.2s infinite ease-in-out;
-}
-.loading-wrapper .loader .dot:nth-child(1){
-    animation-delay: 0s;
-}
-.loading-wrapper .loader .dot:nth-child(2){
-    animation-delay: 0.2s;
-}
-.loading-wrapper .loader .dot:nth-child(3){
-    animation-delay: 0.4s;
-}
-@keyframes bounce {
-    0%, 100%{
-        opacity: 0.1;
-        transform: translateY(0);
-    }
-    50%{
-        opacity: 1;
-        transform: translateY(-5px);
-    }
-}
-.loading-wrapper .text-animation{
-    text-align: center;
-    position: relative;
-    width: 100%;
-}
-.loading-wrapper .text-animation h2{
-    text-align: center;
-    width: 100%;
-    background-color: white;
-    position: absolute;
-    opacity: 0;
-    animation: fade 5s ease-in-out infinite;
-}
-@keyframes fade {
-    0%, 100%{
-        opacity: 0;
-        /* transform: translateY(0); */
-    }
-    10%, 30%{
-        opacity: 1;
-        /* transform: translateY(-5px); */
-    }
-}
-.loading-wrapper .text-animation h2:nth-child(1){
-    animation-delay: 0s;
-    /* opacity: 0;
-    animation-delay: 0s;
-    animation-duration: 5S;
-    background-color: white;
-    width: 100%; */
-}
-
-.loading-wrapper .text-animation h2:nth-child(2){
-    animation-delay: 5s;
-    /* opacity: 0;
-    animation-delay: 6s;
-    animation-duration: 5s;
-    background-color: white;
-    width: 100%; */
-}
-.loading-wrapper .text-animation h2:nth-child(3){
-    animation-duration: 10s;
-    /* opacity: 0;
-    animation-delay: 11s;
-    animation-duration: 5s;
-    background-color: white;
-    width: 100%; */
-}
-.loading-wrapper .text-animation h2:nth-child(4){
-    animation-delay: 15s;
-    /* opacity: 0;
-    animation-delay: 16s;
-    animation-duration: 5S;
-    background-color: white;
-    width: 100%; */
-}
-
+        img{
+            height: 100px;
+            width: 200px;
+        }
     </style>
+    <div class="container">
+        <div class="inside-container">
+            <header>
+                <nav>
+                    <a href="#student" class="active">Student</a>
+                    <a href="">Teachers</a>
+                    <a href="">Class</a>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="search here...." title="search">
+                    <button id="search-button" onclick="filterStudents()">Search</button>
+                </div>
+                <div class="search-result"></div>
+            </header>
 
+            <!-- Student items go here -->
+            <div class="inside-container">
+                <div class="side amida">
+                    <div class="img second">
+                        <img src="img/amida.jpg" alt="">
+                    </div>
+                    <div class="content first">
+                        <h4>Name :</h4>
+                        <p>Amida Foche</p>
+                        <h5>Age :</h5>
+                        <!-- Rest of student info -->
+                    </div>
+                </div>
 
-<div class="loading-wrapper">
-    <div class="loader">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+                <!-- Repeat for other students -->
+                <div class="side awa">
+                    <div class="img second">
+                        <img src="img/awa.jpeg" alt="">
+                    </div>
+                    <div class="content first">
+                        <h4>Name :</h4>
+                        <p>Awa</p>
+                        <h5>Age :</h5>
+                        <!-- Rest of student info -->
+                    </div>
+                </div>
+
+                <!-- Add other student divs here with similar structure -->
+                
+            </div>
+        </div>
     </div>
-    <div class="text-animation">
-        <h2>Hey Welcome!</h2>
-        <h2>Still Loading...</h2>
-        <h2>Hope You Will Like</h2>
-        <h2>Some amelioration coming soon</h2>
-    </div>
-</div>
     
+    <script>
+        function filterStudents() {
+            const input = document.getElementById('search-bar').value.toLowerCase();
+            const students = document.querySelectorAll('.inside-container .side');
+
+            students.forEach(student => {
+                const name = student.querySelector('p').textContent.toLowerCase();
+                if (name.includes(input)) {
+                    student.style.display = '';
+                } else {
+                    student.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
