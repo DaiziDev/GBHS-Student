@@ -355,7 +355,7 @@
     border-radius: 50%;
     box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
     animation: bubles 15s linear infinite;
-    animation-duration: calc(325s / var(--i));
+    animation-duration: calc(525s / var(--i));
 }
 .bubbles1 span:nth-child(even){
     background-color: #ff2f75;
@@ -383,7 +383,7 @@
     border-radius: 50%;
     box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
     animation: bubles 15s linear infinite;
-    animation-duration: calc(325s / var(--i));
+    animation-duration: calc(525s / var(--i));
 }
 .bubbles2 span:nth-child(even){
     background-color: #ff2f75;
@@ -411,7 +411,7 @@
     border-radius: 50%;
     box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
     animation: bubles 15s linear infinite;
-    animation-duration: calc(325s / var(--i));
+    animation-duration: calc(525s / var(--i));
 }
 .bubbles3 span:nth-child(even){
     background-color: #ff2f75;
