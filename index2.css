@@ -439,7 +439,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    z-index: 1000;
+    z-index: 1;
 }
 .container1 .inside-container .side .img{
     height: 98%;

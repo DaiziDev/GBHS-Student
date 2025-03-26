@@ -129,8 +129,58 @@ function filterStudents() {
         }
     });
 }
-
+/*
 const searchBtn = document.getElementById('search-button')
 searchBtn.addEventListener('click', function(){
     filterStudents()
 })
+
+let friends = {
+    0: {
+        'nom': 'amida',
+        'number': '237688086860',
+        'location': 'Olembe',
+        'institute': 'pkf',
+        'image': 'amida.jpg'
+    },
+    1: {
+        'nom': 'awa',
+        'number': '23768878566',
+        'location': 'Emana',
+        'institute': 'pkf',
+        'image': 'awa.jpeg'
+    }
+};
+
+Object.values(friends).forEach((friend) => {
+    let listfriends = document.querySelector('.list-friends');
+    let signlefriend = `<div class="side ${friend.nom}">
+                <div class="img second">
+                    <img src="img/${friend.image}" alt="">
+                    <img src="img/amida1.jpg" alt="">
+                </div>
+                <div class="content first">
+                    <h4>Name :</h4>
+                    <span>${friend.nom}</span>
+                    <h4>Age :${friend.age}</h4>
+                    <p>20</p> <!-- Age should ideally come from data -->
+                    <h4>Height :</h4>
+                    <p>1.7m</p> <!-- Height should ideally come from data -->
+                    <h4>Location :</h4>
+                    <p>${friend.location}</p>
+                    <h4>
+                        Contact :
+                        <input type="text" title="contact" class="contact">
+                        <button class="addcontact">Add contact</button>
+                    </h4>
+                    <p class="display">......</p>
+                    <h4>Bio</h4>
+                    <p>Comes early to school as if she was in her house,
+                        does all assignments and is never punished, too big 
+                        to wash the class, loves only her book just like her bench mate loves trouble. <br>
+                        <span>PS. "Mammy I swear" what will you swear with.</span>
+                    </p>
+                </div>
+            </div>`;
+    listfriends.insertAdjacentHTML('beforeend', signlefriend);
+}); */
